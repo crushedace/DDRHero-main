@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://4jbmjfcbr87h"]
+
+[ext_resource type="Script" path="res://scripts/player/Attack.cs" id="1_akg57"]
+
+[resource]
+script = ExtResource("1_akg57")
+m_damage = 0.0
+Name = "Melee Jab R"
+Description = ""
+InputSequence = Array[int]([3, 3, 0, 2, 1])
+Tags = Array[String](["Melee"])

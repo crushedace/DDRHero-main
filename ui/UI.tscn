@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvrptwnw0qsm3"]
+
+[ext_resource type="PackedScene" uid="uid://3elbqtb65tmb" path="res://ui/input_sequence_display.tscn" id="1_8ia2i"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="InputSequenceDisplay" parent="." instance=ExtResource("1_8ia2i")]

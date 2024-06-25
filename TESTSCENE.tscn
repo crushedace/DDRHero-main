@@ -1,0 +1,29 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8cmvysvo7v1y"]
+
+[ext_resource type="Script" path="res://scripts/player/PlayerAttackComponent.cs" id="1_gy2n1"]
+[ext_resource type="Resource" uid="uid://4jbmjfcbr87h" path="res://abilityResources/MeleeJabR.tres" id="2_awn13"]
+[ext_resource type="PackedScene" uid="uid://bvrptwnw0qsm3" path="res://ui/UI.tscn" id="3_apclt"]
+[ext_resource type="Script" path="res://scripts/GameManager.cs" id="3_up4ve"]
+[ext_resource type="Script" path="res://scripts/player/AbilityDeck.cs" id="5_f76w1"]
+[ext_resource type="Resource" uid="uid://b1kkus1elnvv7" path="res://abilityResources/DashR.tres" id="6_o442d"]
+[ext_resource type="Resource" uid="uid://ds3eelo6uo51d" path="res://abilityResources/MeleeJabL.tres" id="7_ttw1j"]
+[ext_resource type="Resource" uid="uid://d2yv05dv0q5t6" path="res://abilityResources/DashL.tres" id="8_jvgre"]
+[ext_resource type="Resource" uid="uid://b6ewah0l4fh8k" path="res://abilityResources/ShuffleAbility.tres" id="9_4hywd"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-1, -1)
+script = ExtResource("1_gy2n1")
+m_currentAbility = ExtResource("2_awn13")
+
+[node name="UI" parent="." instance=ExtResource("3_apclt")]
+
+[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("playerAttackComponentTEMP")]
+position = Vector2(1, 1)
+script = ExtResource("3_up4ve")
+playerAttackComponentTEMP = NodePath("..")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-1, 0)
+script = ExtResource("5_f76w1")
+m_abilities = Array[Resource]([ExtResource("2_awn13"), ExtResource("6_o442d"), ExtResource("7_ttw1j"), ExtResource("8_jvgre")])
+m_shuffleAbility = ExtResource("9_4hywd")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ds3eelo6uo51d"]
+
+[ext_resource type="Script" path="res://scripts/player/Attack.cs" id="1_smabu"]
+
+[resource]
+script = ExtResource("1_smabu")
+m_damage = 0.0
+Name = "Melee Jab L"
+Description = ""
+InputSequence = Array[int]([1, 1, 0, 2, 3])
+Tags = Array[String](["Melee"])

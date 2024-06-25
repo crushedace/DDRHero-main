@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://k6ps2kc4dmlo"]
+
+[ext_resource type="Script" path="res://ui/DeckDisplay.cs" id="1_ym0ew"]
+[ext_resource type="Script" path="res://scripts/player/AbilityDeck.cs" id="3_ou8ag"]
+[ext_resource type="Resource" uid="uid://4jbmjfcbr87h" path="res://abilityResources/MeleeJabR.tres" id="4_giejd"]
+[ext_resource type="Resource" uid="uid://b1kkus1elnvv7" path="res://abilityResources/DashR.tres" id="5_4tue8"]
+[ext_resource type="Resource" uid="uid://ds3eelo6uo51d" path="res://abilityResources/MeleeJabL.tres" id="6_5chtm"]
+[ext_resource type="Resource" uid="uid://d2yv05dv0q5t6" path="res://abilityResources/DashL.tres" id="7_fva2f"]
+[ext_resource type="Resource" uid="uid://b6ewah0l4fh8k" path="res://abilityResources/ShuffleAbility.tres" id="8_8gnuk"]
+
+[node name="UIDeck" type="Control" node_paths=PackedStringArray("m_abilityDeck", "m_cardContainer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ym0ew")
+m_abilityDeck = NodePath("TEMPORARY INVENTORY")
+m_cardContainer = NodePath("Panel/HFlowContainer")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -512.0
+offset_top = 50.0
+offset_right = 512.0
+offset_bottom = 318.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -11.5
+offset_right = 144.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "INVENTORY / SHOP COULD GO HERE?"
+
+[node name="TEMPORARY INVENTORY" type="Node2D" parent="."]
+position = Vector2(-1, 0)
+script = ExtResource("3_ou8ag")
+m_abilities = Array[Resource]([ExtResource("4_giejd"), ExtResource("5_4tue8"), ExtResource("6_5chtm"), ExtResource("7_fva2f")])
+m_shuffleAbility = ExtResource("8_8gnuk")

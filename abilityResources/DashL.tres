@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d2yv05dv0q5t6"]
+
+[ext_resource type="Script" path="res://scripts/player/Attack.cs" id="1_xcws8"]
+
+[resource]
+script = ExtResource("1_xcws8")
+m_damage = 0.0
+Name = "Dash L"
+Description = ""
+InputSequence = Array[int]([3, 3, 3])
+Tags = Array[String](["Melee"])

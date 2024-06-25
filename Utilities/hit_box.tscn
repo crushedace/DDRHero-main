@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4guipn47st7k"]
+
+[ext_resource type="Script" path="res://Utilities/hit_box.gd" id="1_f7vqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uydq0"]
+size = Vector2(75, 82)
+
+[node name="HitBox" type="Area2D" groups=["Attack"]]
+position = Vector2(116, 71)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_f7vqy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_uydq0")
+
+[node name="DisableHitBoxTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="DisableHitBoxTimer" to="." method="_on_disable_hit_box_timer_timeout"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b6ewah0l4fh8k"]
+
+[ext_resource type="Script" path="res://scripts/player/Ability.cs" id="1_0dcwd"]
+
+[resource]
+script = ExtResource("1_0dcwd")
+Name = "Shuffle"
+Description = ""
+InputSequence = Array[int]([1, 3, 1, 3, 1, 3])
+Tags = null

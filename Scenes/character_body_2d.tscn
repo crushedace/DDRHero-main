@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5eyclk0rvih6"]
+
+[ext_resource type="Texture2D" uid="uid://c3f36vaiidjl1" path="res://icon.svg" id="1_on0xs"]
+[ext_resource type="PackedScene" uid="uid://dw6e12x7h2v2r" path="res://Utilities/hurtbox.tscn" id="2_j2mwe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bka4"]
+size = Vector2(133, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uubak"]
+size = Vector2(101, 105)
+
+[node name="PLayerBody" type="CharacterBody2D" groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 1.5)
+shape = SubResource("RectangleShape2D_3bka4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_on0xs")
+
+[node name="Hurtbox" parent="." instance=ExtResource("2_j2mwe")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_uubak")
+debug_color = Color(0.978013, 0.0680272, 0.337077, 0.42)
+
+[editable path="Hurtbox"]
